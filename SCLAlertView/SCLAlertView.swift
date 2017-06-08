@@ -244,6 +244,12 @@ open class SCLAlertView: UIViewController {
     fileprivate var inputs = [UITextField]()
     fileprivate var input = [UITextView]()
     internal var buttons = [SCLButton]()
+    internal var topButton: SCLButton? {
+        willSet {
+            topButton?.removeFromSuperview()
+        }
+    }
+    
     fileprivate var selfReference: SCLAlertView?
     
     public init(appearance: SCLAppearance) {
@@ -484,6 +490,17 @@ open class SCLAlertView: UIViewController {
     }
     
     @discardableResult
+    open func addTopButton(_ image: UIImage, action:@escaping ()->Void)->SCLButton {
+        let btn = addTopButton(with: image)
+        btn.actionType = SCLActionType.closure
+        btn.action = action
+        btn.addTarget(self, action:#selector(SCLAlertView.buttonTapped(_:)), for:.touchUpInside)
+        btn.addTarget(self, action:#selector(SCLAlertView.buttonTapDown(_:)), for:[.touchDown, .touchDragEnter])
+        btn.addTarget(self, action:#selector(SCLAlertView.buttonRelease(_:)), for:[.touchUpInside, .touchUpOutside, .touchCancel, .touchDragOutside] )
+        return btn
+    }
+    
+    @discardableResult
     open func addButton(_ title:String, backgroundColor:UIColor? = nil, textColor:UIColor? = nil, showDurationStatus:Bool = false, target:AnyObject, selector:Selector)->SCLButton {
         let btn = addButton(title, backgroundColor: backgroundColor, textColor: textColor, showDurationStatus: showDurationStatus)
         btn.actionType = SCLActionType.selector
@@ -510,6 +527,17 @@ open class SCLAlertView: UIViewController {
         btn.showDurationStatus = showDurationStatus
         contentView.addSubview(btn)
         buttons.append(btn)
+        return btn
+    }
+    
+    @discardableResult
+    fileprivate func addTopButton(with image: UIImage, origin: CGPoint=CGPoint.zero)->SCLButton {
+        let btn = SCLButton(frame: CGRect(origin: origin, size: image.size))
+        btn.setImage(image, for: .normal)
+        btn.layer.masksToBounds = true
+        contentView.addSubview(btn)
+        topButton = btn
+        
         return btn
     }
     
