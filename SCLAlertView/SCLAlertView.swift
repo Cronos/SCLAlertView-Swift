@@ -490,8 +490,8 @@ open class SCLAlertView: UIViewController {
     }
     
     @discardableResult
-    open func addTopButton(_ image: UIImage, action:@escaping ()->Void)->SCLButton {
-        let btn = addTopButton(with: image)
+    open func addTopButton(_ image: UIImage, origin: CGPoint = CGPoint.zero, size: CGSize? = nil, action:@escaping ()->Void)->SCLButton {
+        let btn = addTopButton(with: image, frame: CGRect(origin: origin, size: size ?? image.size))
         btn.actionType = SCLActionType.closure
         btn.action = action
         btn.addTarget(self, action:#selector(SCLAlertView.buttonTapped(_:)), for:.touchUpInside)
@@ -531,8 +531,8 @@ open class SCLAlertView: UIViewController {
     }
     
     @discardableResult
-    fileprivate func addTopButton(with image: UIImage, origin: CGPoint=CGPoint.zero)->SCLButton {
-        let btn = SCLButton(frame: CGRect(origin: origin, size: image.size))
+    fileprivate func addTopButton(with image: UIImage, frame: CGRect) -> SCLButton {
+        let btn = SCLButton(frame: frame)
         btn.setImage(image, for: .normal)
         btn.layer.masksToBounds = true
         contentView.addSubview(btn)
