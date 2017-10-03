@@ -90,33 +90,6 @@ open class SCLButton: UIButton {
     }
 }
 
-// Allow alerts to be closed/renamed in a chainable manner
-// Example: SCLAlertView().showSuccess(self, title: "Test", subTitle: "Value").close()
-public class SCLAlertViewResponder {
-    let alertview: SCLAlertView
-    
-    // Initialisation and Title/Subtitle/Close functions
-    init(alertview: SCLAlertView) {
-        self.alertview = alertview
-    }
-    
-    open func setTitle(_ title: String) {
-        self.alertview.labelTitle.text = title
-    }
-    
-    open func setSubTitle(_ subTitle: String) {
-        self.alertview.viewText.text = subTitle
-    }
-    
-    open func close() {
-        self.alertview.hideView()
-    }
-    
-    open func setDismissBlock(_ dismissBlock: @escaping DismissBlock) {
-        self.alertview.dismissBlock = dismissBlock
-    }
-}
-
 let kCircleHeightBackground: CGFloat = 62.0
 
 public typealias DismissBlock = () -> Void

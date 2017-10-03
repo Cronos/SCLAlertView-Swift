@@ -19,6 +19,7 @@
 		9EE073161C9D7F4C002B43FD /* SCLAlertViewStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE073141C9D7F4C002B43FD /* SCLAlertViewStyleTests.swift */; };
 		9EE99F911CA6B2320090F845 /* SCLPublicConstructorsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE99F901CA6B2320090F845 /* SCLPublicConstructorsTest.swift */; };
 		E3228BB41F83AAFC00AC5F2A /* SCLAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3228BB31F83AAFC00AC5F2A /* SCLAppearance.swift */; };
+		E3228BBA1F83C28B00AC5F2A /* SCLAlertViewResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3228BB91F83C28B00AC5F2A /* SCLAlertViewResponder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		9EE073141C9D7F4C002B43FD /* SCLAlertViewStyleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertViewStyleTests.swift; sourceTree = "<group>"; };
 		9EE99F901CA6B2320090F845 /* SCLPublicConstructorsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLPublicConstructorsTest.swift; sourceTree = "<group>"; };
 		E3228BB31F83AAFC00AC5F2A /* SCLAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCLAppearance.swift; sourceTree = "<group>"; };
+		E3228BB91F83C28B00AC5F2A /* SCLAlertViewResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCLAlertViewResponder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				70264F171B0F592500B32B18 /* SCLAlertView.swift */,
 				9EAEFBC41CC2AA6600BA87FB /* SCLExtensions.swift */,
 				E3228BB31F83AAFC00AC5F2A /* SCLAppearance.swift */,
+				E3228BB91F83C28B00AC5F2A /* SCLAlertViewResponder.swift */,
 				70264EFA1B0F588700B32B18 /* Supporting Files */,
 			);
 			path = SCLAlertView;
@@ -242,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EAEFBC51CC2AA6600BA87FB /* SCLExtensions.swift in Sources */,
+				E3228BBA1F83C28B00AC5F2A /* SCLAlertViewResponder.swift in Sources */,
 				70264F181B0F592500B32B18 /* SCLAlertView.swift in Sources */,
 				E3228BB41F83AAFC00AC5F2A /* SCLAppearance.swift in Sources */,
 			);
