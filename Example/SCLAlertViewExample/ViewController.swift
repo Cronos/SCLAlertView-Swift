@@ -9,7 +9,6 @@
 import UIKit
 import SCLAlertView
 
-
 let kSuccessTitle = "Congratulations"
 let kErrorTitle = "Connection error"
 let kNoticeTitle = "Notice"
@@ -47,7 +46,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showNotice(_ sender: AnyObject) {
-        let appearance = SCLAlertView.SCLAppearance(dynamicAnimatorActive: true)
+        let appearance = SCLAppearance(dynamicAnimatorActive: true)
         _ = SCLAlertView(appearance: appearance).showNotice(kNoticeTitle, subTitle: kSubtitle)
     }
     
@@ -60,11 +59,11 @@ class ViewController: UIViewController {
     }
 
 	@IBAction func showEdit(_ sender: AnyObject) {
-        let appearance = SCLAlertView.SCLAppearance(showCloseButton: true)
+        let appearance = SCLAppearance(showCloseButton: true)
         let alert = SCLAlertView(appearance: appearance)
 		let txt = alert.addTextField("Enter your name")
         _ = alert.addButton("Show Name") {
-			print("Text value: \(txt.text)")
+            print("Text value: \(String(describing: txt.text))")
 		}
 		_ = alert.showEdit(kInfoTitle, subTitle:kSubtitle)
 	}
@@ -72,7 +71,7 @@ class ViewController: UIViewController {
     
     @IBAction func showCustomSubview(_ sender: AnyObject) {
         // Create custom Appearance Configuration
-        let appearance = SCLAlertView.SCLAppearance(
+        let appearance = SCLAppearance(
             kTitleFont: UIFont(name: "HelveticaNeue", size: 20)!,
             kTextFont: UIFont(name: "HelveticaNeue", size: 14)!,
             kButtonFont: UIFont(name: "HelveticaNeue-Bold", size: 14)!,
